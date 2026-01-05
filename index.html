@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koddi Design System - Navigation Bar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="logo">
+                    <img src="https://www.figma.com/api/mcp/asset/ed1b3a68-bc97-4343-8082-1f8e276e3922" alt="Koddi Logo" />
+                </div>
+                <nav class="sidebar-nav">
+                    <button class="nav-icon-btn menu-toggle-btn" aria-label="Menu">
+                        <i data-lucide="menu" class="nav-icon"></i>
+                    </button>
+                    <button class="nav-icon-btn analytics-btn active" aria-label="Analytics">
+                        <i data-lucide="trending-up" class="nav-icon"></i>
+                        <div class="hover-card">
+                            <div class="hover-card-header">
+                                <span class="hover-card-title">Analytics</span>
+                            </div>
+                            <div class="hover-card-content">
+                                <div class="hover-card-item active">
+                                    <i data-lucide="layout-grid" class="hover-card-icon"></i>
+                                    <span>Campaigns</span>
+                                </div>
+                                <div class="hover-card-item">
+                                    <i data-lucide="megaphone" class="hover-card-icon"></i>
+                                    <span>Ad groups</span>
+                                </div>
+                                <div class="hover-card-item">
+                                    <i data-lucide="building-2" class="hover-card-icon"></i>
+                                    <span>Hotels</span>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                    <button class="nav-icon-btn reports-btn" aria-label="Reports">
+                        <i data-lucide="bar-chart-3" class="nav-icon"></i>
+                        <div class="hover-card">
+                            <div class="hover-card-header">
+                                <span class="hover-card-title">Reports</span>
+                            </div>
+                            <div class="hover-card-content">
+                                <div class="hover-card-item">
+                                    <i data-lucide="trending-up" class="hover-card-icon"></i>
+                                    <span>Performance</span>
+                                </div>
+                                <div class="hover-card-item">
+                                    <i data-lucide="dollar-sign" class="hover-card-icon"></i>
+                                    <span>Revenue</span>
+                                </div>
+                                <div class="hover-card-item">
+                                    <i data-lucide="target" class="hover-card-icon"></i>
+                                    <span>Conversions</span>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                    <button class="nav-icon-btn settings-btn" aria-label="Settings">
+                        <i data-lucide="settings" class="nav-icon"></i>
+                        <div class="hover-card">
+                            <div class="hover-card-header">
+                                <span class="hover-card-title">Settings</span>
+                            </div>
+                            <div class="hover-card-content">
+                                <div class="hover-card-item">
+                                    <i data-lucide="user" class="hover-card-icon"></i>
+                                    <span>Account</span>
+                                </div>
+                                <div class="hover-card-item">
+                                    <i data-lucide="sliders" class="hover-card-icon"></i>
+                                    <span>Preferences</span>
+                                </div>
+                                <div class="hover-card-item">
+                                    <i data-lucide="bell" class="hover-card-icon"></i>
+                                    <span>Notifications</span>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                    <button class="nav-icon-btn calendar-btn" aria-label="Calendar">
+                        <i data-lucide="calendar" class="nav-icon"></i>
+                        <div class="hover-card">
+                            <div class="hover-card-header">
+                                <span class="hover-card-title">Calendar</span>
+                            </div>
+                            <div class="hover-card-content">
+                                <div class="hover-card-item">
+                                    <i data-lucide="calendar-days" class="hover-card-icon"></i>
+                                    <span>Events</span>
+                                </div>
+                                <div class="hover-card-item">
+                                    <i data-lucide="clock" class="hover-card-icon"></i>
+                                    <span>Schedule</span>
+                                </div>
+                                <div class="hover-card-item">
+                                    <i data-lucide="timeline" class="hover-card-icon"></i>
+                                    <span>Timeline</span>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                    <button class="nav-icon-btn security-btn" aria-label="Campaigns">
+                        <i data-lucide="shield" class="nav-icon"></i>
+                        <div class="hover-card">
+                            <div class="hover-card-header">
+                                <span class="hover-card-title">Security</span>
+                            </div>
+                            <div class="hover-card-content">
+                                <div class="hover-card-item">
+                                    <i data-lucide="shield-check" class="hover-card-icon"></i>
+                                    <span>Security</span>
+                                </div>
+                                <div class="hover-card-item">
+                                    <i data-lucide="file-check" class="hover-card-icon"></i>
+                                    <span>Compliance</span>
+                                </div>
+                                <div class="hover-card-item">
+                                    <i data-lucide="key" class="hover-card-icon"></i>
+                                    <span>Permissions</span>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                    <button class="nav-icon-btn charts-btn" aria-label="Charts">
+                        <i data-lucide="pie-chart" class="nav-icon"></i>
+                        <div class="hover-card">
+                            <div class="hover-card-header">
+                                <span class="hover-card-title">Charts</span>
+                            </div>
+                            <div class="hover-card-content">
+                                <div class="hover-card-item">
+                                    <i data-lucide="layout-dashboard" class="hover-card-icon"></i>
+                                    <span>Overview</span>
+                                </div>
+                                <div class="hover-card-item">
+                                    <i data-lucide="activity" class="hover-card-icon"></i>
+                                    <span>Trends</span>
+                                </div>
+                                <div class="hover-card-item">
+                                    <i data-lucide="lightbulb" class="hover-card-icon"></i>
+                                    <span>Insights</span>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                </nav>
+            </div>
+            <div class="sidebar-bottom">
+                <button class="nav-icon-btn help-btn" aria-label="Help">
+                    <i data-lucide="help-circle" class="nav-icon"></i>
+                    <div class="hover-card">
+                        <div class="hover-card-header">
+                            <span class="hover-card-title">Help</span>
+                        </div>
+                        <div class="hover-card-content">
+                            <div class="hover-card-item">
+                                <i data-lucide="book" class="hover-card-icon"></i>
+                                <span>Documentation</span>
+                            </div>
+                            <div class="hover-card-item">
+                                <i data-lucide="headphones" class="hover-card-icon"></i>
+                                <span>Support</span>
+                            </div>
+                            <div class="hover-card-item">
+                                <i data-lucide="help-circle" class="hover-card-icon"></i>
+                                <span>FAQ</span>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+                <button class="nav-icon-btn" aria-label="Settings">
+                    <i data-lucide="settings" class="nav-icon"></i>
+                </button>
+                <button class="nav-icon-btn primary" aria-label="New">
+                    <i data-lucide="plus" class="nav-icon"></i>
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="header-content">
+                    <div class="header-left">
+                        <button class="back-btn" aria-label="Back">
+                            <i data-lucide="panel-left" class="back-icon"></i>
+                        </button>
+                    </div>
+                    <nav class="tabs">
+                        <button class="tab active">
+                            <span class="tab-label">All campaigns</span>
+                            <span class="tab-badge active">50</span>
+                            <i data-lucide="pin" class="tab-icon"></i>
+                        </button>
+                        <button class="tab">
+                            <span class="tab-label">Custom campaign view</span>
+                            <span class="tab-badge">34</span>
+                            <i data-lucide="pin" class="tab-icon"></i>
+                        </button>
+                        <button class="tab">
+                            <span class="tab-label">All ad groups</span>
+                            <span class="tab-badge">34</span>
+                            <i data-lucide="pin" class="tab-icon"></i>
+                        </button>
+                        <button class="tab">
+                            <span class="tab-label">Custom ad group view</span>
+                            <span class="tab-badge">34</span>
+                            <i data-lucide="pin" class="tab-icon"></i>
+                        </button>
+                    </nav>
+                    <div class="header-right">
+                        <div class="user-avatar">AC</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <div class="content-header">
+                    <div class="page-title">
+                        <span class="title-subtitle">Google</span>
+                        <h1 class="title-main">All campaigns</h1>
+                    </div>
+                    <div class="header-actions">
+                        <div class="select-wrapper">
+                            <i data-lucide="building-2" class="select-icon"></i>
+                            <select class="select-input">
+                                <option>Hilton</option>
+                            </select>
+                            <i data-lucide="chevron-down" class="select-chevron"></i>
+                        </div>
+                        <div class="date-input-wrapper">
+                            <i data-lucide="calendar" class="date-icon"></i>
+                            <input type="text" class="date-input" placeholder="Select date" readonly>
+                        </div>
+                        <button class="filter-btn">
+                            <i data-lucide="filter" class="btn-icon"></i>
+                            <span>Filters</span>
+                        </button>
+                        <button class="hide-graph-btn">
+                            <i data-lucide="eye-off" class="btn-icon"></i>
+                            <span>Hide graph</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="graph-section">
+                    <div class="graph-container">
+                        <div class="graph-controls">
+                            <div class="graph-control-group">
+                                <div class="graph-control-left">
+                                    <i data-lucide="filter" class="control-icon"></i>
+                                    <span class="control-label">Dimension</span>
+                                </div>
+                                <div class="graph-control-right">
+                                    <span class="control-value">Program type</span>
+                                    <i data-lucide="chevron-down" class="control-chevron"></i>
+                                </div>
+                            </div>
+                            <div class="graph-control-group">
+                                <div class="graph-control-left">
+                                    <i data-lucide="clock" class="control-icon"></i>
+                                    <span class="control-label">Time frame</span>
+                                </div>
+                                <div class="graph-control-right">
+                                    <span class="control-value">Default</span>
+                                    <i data-lucide="chevron-down" class="control-chevron"></i>
+                                </div>
+                            </div>
+                            <div class="multi-select-wrapper">
+                                <div class="multi-select-chips">
+                                    <span class="chip">Impressions</span>
+                                    <span class="chip">Cost</span>
+                                    <span class="chip">Clicks</span>
+                                </div>
+                                <div class="multi-select-actions">
+                                    <button class="chip-close">
+                                        <i data-lucide="x" class="chip-icon"></i>
+                                    </button>
+                                    <i data-lucide="chevron-down" class="select-chevron"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chart-wrapper">
+                            <div class="chart-container">
+                                <div class="chart-y-axis">
+                                    <span>4,000</span>
+                                    <span>3,000</span>
+                                    <span>2,000</span>
+                                    <span>1,000</span>
+                                    <span>0</span>
+                                </div>
+                                <div class="chart-area">
+                                    <div class="chart-grid">
+                                        <div class="grid-line"></div>
+                                        <div class="grid-line"></div>
+                                        <div class="grid-line"></div>
+                                        <div class="grid-line"></div>
+                                        <div class="grid-line"></div>
+                                    </div>
+                                    <div class="chart-lines">
+                                        <svg class="chart-svg" viewBox="0 0 400 200" preserveAspectRatio="none">
+                                            <path d="M 0 150 Q 50 120, 100 100 T 200 80 T 300 60 T 400 50" 
+                                                  stroke="#367dfe" stroke-width="2" fill="none"/>
+                                            <path d="M 0 100 Q 50 90, 100 80 T 200 70 T 300 50 T 400 40" 
+                                                  stroke="#ab4dfb" stroke-width="2" fill="none"/>
+                                            <path d="M 0 120 Q 50 110, 100 100 T 200 90 T 300 85 T 400 80" 
+                                                  stroke="#00c950" stroke-width="2" fill="none"/>
+                                        </svg>
+                                    </div>
+                                    <div class="chart-x-axis">
+                                        <span>Jan 22</span>
+                                        <span>Feb 22</span>
+                                        <span>Mar 22</span>
+                                        <span>Apr 22</span>
+                                        <span>May 22</span>
+                                        <span>Jun 22</span>
+                                        <span>Jul 22</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <div class="legend-dot" style="background-color: #367dfe;"></div>
+                                <span>Impressions</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-dot" style="background-color: #ab4dfb;"></div>
+                                <span>Cost</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-dot" style="background-color: #00c950;"></div>
+                                <span>Clicks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-section">
+                    <div class="table-header-actions">
+                        <div class="table-actions-left">
+                            <button class="new-campaign-btn">
+                                <i data-lucide="plus" class="btn-icon"></i>
+                                <span>New Campaign</span>
+                            </button>
+                            <div class="search-wrapper">
+                                <i data-lucide="search" class="search-icon"></i>
+                                <input type="text" class="search-input" placeholder="Filter ad groups, access quick actions...">
+                            </div>
+                        </div>
+                        <div class="table-actions-right">
+                            <div class="select-wrapper small">
+                                <i data-lucide="upload" class="select-icon"></i>
+                                <select class="select-input">
+                                    <option>Bulk upload</option>
+                                </select>
+                            </div>
+                            <div class="select-wrapper small">
+                                <i data-lucide="menu" class="select-icon"></i>
+                                <select class="select-input">
+                                    <option>Actions</option>
+                                </select>
+                                <i data-lucide="chevron-down" class="select-chevron"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th><div class="th-content"><span>Campaign name</span><div class="th-icons"><i data-lucide="arrow-up-down" class="th-icon"></i><i data-lucide="more-vertical" class="th-icon"></i></div></div></th>
+                                    <th><div class="th-content"><span>Status</span><div class="th-icons"><i data-lucide="arrow-up-down" class="th-icon"></i><i data-lucide="more-vertical" class="th-icon"></i></div></div></th>
+                                    <th><div class="th-content"><span>Budget</span><div class="th-icons"><i data-lucide="arrow-up-down" class="th-icon"></i><i data-lucide="more-vertical" class="th-icon"></i></div></div></th>
+                                    <th><div class="th-content"><span>Eligible impressions</span><div class="th-icons"><i data-lucide="arrow-up-down" class="th-icon"></i><i data-lucide="more-vertical" class="th-icon"></i></div></div></th>
+                                    <th><div class="th-content"><span>Clicks</span><div class="th-icons"><i data-lucide="arrow-up-down" class="th-icon"></i><i data-lucide="more-vertical" class="th-icon"></i></div></div></th>
+                                    <th><div class="th-content"><span>CPC</span><div class="th-icons"><i data-lucide="arrow-up-down" class="th-icon"></i><i data-lucide="more-vertical" class="th-icon"></i></div></div></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><div class="td-campaign"><i data-lucide="chevron-right" class="campaign-icon"></i><div class="campaign-info"><div class="campaign-name">Campaign name</div><div class="campaign-id">02940214</div></div></div></td><td><span class="status-badge">Ad groups (2+)</span></td><td>$60,000</td><td>70,000,000</td><td>7,240</td><td>$3.96</td></tr>
+                                <tr><td><div class="td-campaign"><i data-lucide="chevron-right" class="campaign-icon"></i><div class="campaign-info"><div class="campaign-name">Campaign name</div><div class="campaign-id">02940214</div></div></div></td><td><span class="status-badge">Ad groups (2+)</span></td><td>$60,000</td><td>70,000,000</td><td>7,240</td><td>$3.96</td></tr>
+                                <tr><td><div class="td-campaign"><i data-lucide="chevron-right" class="campaign-icon"></i><div class="campaign-info"><div class="campaign-name">Campaign name</div><div class="campaign-id">02940214</div></div></div></td><td><span class="status-badge">Ad groups (2+)</span></td><td>$60,000</td><td>70,000,000</td><td>7,305</td><td>$3.96</td></tr>
+                                <tr><td><div class="td-campaign"><i data-lucide="chevron-right" class="campaign-icon"></i><div class="campaign-info"><div class="campaign-name">Campaign name</div><div class="campaign-id">02940214</div></div></div></td><td><span class="status-badge">Ad groups (2+)</span></td><td>$60,000</td><td>70,000,000</td><td>7,330</td><td>$3.96</td></tr>
+                                <tr><td><div class="td-campaign"><i data-lucide="chevron-right" class="campaign-icon"></i><div class="campaign-info"><div class="campaign-name">Campaign name</div><div class="campaign-id">02940214</div></div></div></td><td><span class="status-badge">Ad groups (2+)</span></td><td>$60,000</td><td>70,000,000</td><td>7,305</td><td>$3.96</td></tr>
+                                <tr><td><div class="td-campaign"><i data-lucide="chevron-right" class="campaign-icon"></i><div class="campaign-info"><div class="campaign-name">Campaign name</div><div class="campaign-id">02940214</div></div></div></td><td><span class="status-badge">Ad groups (2+)</span></td><td>$60,000</td><td>70,000,000</td><td>7,309</td><td>$3.96</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
