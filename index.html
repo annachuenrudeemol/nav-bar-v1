@@ -15,149 +15,277 @@
         <aside class="sidebar">
             <div class="sidebar-top">
                 <div class="logo">
-                    <img src="https://www.figma.com/api/mcp/asset/ed1b3a68-bc97-4343-8082-1f8e276e3922" alt="Koddi Logo" />
+                    <img src="https://www.figma.com/api/mcp/asset/ed1b3a68-bc97-4343-8082-1f8e276e3922" alt="Koddi Logo" class="logo-img-collapsed" />
+                    <img src="https://www.figma.com/api/mcp/asset/816cb885-9515-4519-9c25-d25a7bc31564" alt="Koddi Logo" class="logo-img-expanded" />
                 </div>
                 <nav class="sidebar-nav">
                     <button class="nav-icon-btn menu-toggle-btn" aria-label="Menu">
                         <i data-lucide="menu" class="nav-icon"></i>
                     </button>
-                    <button class="nav-icon-btn analytics-btn active" aria-label="Analytics">
-                        <i data-lucide="trending-up" class="nav-icon"></i>
-                        <div class="hover-card">
-                            <div class="hover-card-header">
-                                <span class="hover-card-title">Analytics</span>
+                    <div class="nav-section">
+                        <button class="nav-icon-btn analytics-btn active expandable" aria-label="Analytics">
+                            <i data-lucide="trending-up" class="nav-icon"></i>
+                            <span class="nav-label">Analytics</span>
+                            <i data-lucide="chevron-down" class="nav-chevron"></i>
+                            <div class="hover-card">
+                                <div class="hover-card-header">
+                                    <span class="hover-card-title">Analytics</span>
+                                </div>
+                                <div class="hover-card-content">
+                                    <div class="hover-card-item active">
+                                        <i data-lucide="layout-grid" class="hover-card-icon"></i>
+                                        <span>Campaigns</span>
+                                    </div>
+                                    <div class="hover-card-item">
+                                        <i data-lucide="megaphone" class="hover-card-icon"></i>
+                                        <span>Ad groups</span>
+                                    </div>
+                                    <div class="hover-card-item">
+                                        <i data-lucide="building-2" class="hover-card-icon"></i>
+                                        <span>Hotels</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="hover-card-content">
-                                <div class="hover-card-item active">
-                                    <i data-lucide="layout-grid" class="hover-card-icon"></i>
+                        </button>
+                        <div class="nav-submenu expanded">
+                            <div class="nav-submenu-item active">
+                                <div class="nav-submenu-content">
                                     <span>Campaigns</span>
                                 </div>
-                                <div class="hover-card-item">
-                                    <i data-lucide="megaphone" class="hover-card-icon"></i>
+                            </div>
+                            <div class="nav-submenu-item">
+                                <div class="nav-submenu-content">
                                     <span>Ad groups</span>
                                 </div>
-                                <div class="hover-card-item">
-                                    <i data-lucide="building-2" class="hover-card-icon"></i>
+                            </div>
+                            <div class="nav-submenu-item">
+                                <div class="nav-submenu-content">
                                     <span>Hotels</span>
                                 </div>
                             </div>
                         </div>
-                    </button>
-                    <button class="nav-icon-btn reports-btn" aria-label="Reports">
-                        <i data-lucide="bar-chart-3" class="nav-icon"></i>
-                        <div class="hover-card">
-                            <div class="hover-card-header">
-                                <span class="hover-card-title">Reports</span>
+                    </div>
+                    <div class="nav-section">
+                        <button class="nav-icon-btn reports-btn expandable" aria-label="Reports">
+                            <i data-lucide="bar-chart-3" class="nav-icon"></i>
+                            <span class="nav-label">Reports</span>
+                            <i data-lucide="chevron-down" class="nav-chevron"></i>
+                            <div class="hover-card">
+                                <div class="hover-card-header">
+                                    <span class="hover-card-title">Reports</span>
+                                </div>
+                                <div class="hover-card-content">
+                                    <div class="hover-card-item">
+                                        <i data-lucide="trending-up" class="hover-card-icon"></i>
+                                        <span>Performance</span>
+                                    </div>
+                                    <div class="hover-card-item">
+                                        <i data-lucide="dollar-sign" class="hover-card-icon"></i>
+                                        <span>Revenue</span>
+                                    </div>
+                                    <div class="hover-card-item">
+                                        <i data-lucide="target" class="hover-card-icon"></i>
+                                        <span>Conversions</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="hover-card-content">
-                                <div class="hover-card-item">
-                                    <i data-lucide="trending-up" class="hover-card-icon"></i>
+                        </button>
+                        <div class="nav-submenu">
+                            <div class="nav-submenu-item">
+                                <div class="nav-submenu-content">
                                     <span>Performance</span>
                                 </div>
-                                <div class="hover-card-item">
-                                    <i data-lucide="dollar-sign" class="hover-card-icon"></i>
+                            </div>
+                            <div class="nav-submenu-item">
+                                <div class="nav-submenu-content">
                                     <span>Revenue</span>
                                 </div>
-                                <div class="hover-card-item">
-                                    <i data-lucide="target" class="hover-card-icon"></i>
+                            </div>
+                            <div class="nav-submenu-item">
+                                <div class="nav-submenu-content">
                                     <span>Conversions</span>
                                 </div>
                             </div>
                         </div>
-                    </button>
-                    <button class="nav-icon-btn settings-btn" aria-label="Settings">
-                        <i data-lucide="settings" class="nav-icon"></i>
-                        <div class="hover-card">
-                            <div class="hover-card-header">
-                                <span class="hover-card-title">Settings</span>
+                    </div>
+                    <div class="nav-section">
+                        <button class="nav-icon-btn settings-btn expandable" aria-label="Settings">
+                            <i data-lucide="settings" class="nav-icon"></i>
+                            <span class="nav-label">Settings</span>
+                            <i data-lucide="chevron-down" class="nav-chevron"></i>
+                            <div class="hover-card">
+                                <div class="hover-card-header">
+                                    <span class="hover-card-title">Settings</span>
+                                </div>
+                                <div class="hover-card-content">
+                                    <div class="hover-card-item">
+                                        <i data-lucide="user" class="hover-card-icon"></i>
+                                        <span>Account</span>
+                                    </div>
+                                    <div class="hover-card-item">
+                                        <i data-lucide="sliders" class="hover-card-icon"></i>
+                                        <span>Preferences</span>
+                                    </div>
+                                    <div class="hover-card-item">
+                                        <i data-lucide="bell" class="hover-card-icon"></i>
+                                        <span>Notifications</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="hover-card-content">
-                                <div class="hover-card-item">
-                                    <i data-lucide="user" class="hover-card-icon"></i>
+                        </button>
+                        <div class="nav-submenu">
+                            <div class="nav-submenu-item">
+                                <div class="nav-submenu-content">
                                     <span>Account</span>
                                 </div>
-                                <div class="hover-card-item">
-                                    <i data-lucide="sliders" class="hover-card-icon"></i>
+                            </div>
+                            <div class="nav-submenu-item">
+                                <div class="nav-submenu-content">
                                     <span>Preferences</span>
                                 </div>
-                                <div class="hover-card-item">
-                                    <i data-lucide="bell" class="hover-card-icon"></i>
+                            </div>
+                            <div class="nav-submenu-item">
+                                <div class="nav-submenu-content">
                                     <span>Notifications</span>
                                 </div>
                             </div>
                         </div>
-                    </button>
-                    <button class="nav-icon-btn calendar-btn" aria-label="Calendar">
-                        <i data-lucide="calendar" class="nav-icon"></i>
-                        <div class="hover-card">
-                            <div class="hover-card-header">
-                                <span class="hover-card-title">Calendar</span>
+                    </div>
+                    <div class="nav-section">
+                        <button class="nav-icon-btn calendar-btn expandable" aria-label="Calendar">
+                            <i data-lucide="calendar" class="nav-icon"></i>
+                            <span class="nav-label">Calendar</span>
+                            <i data-lucide="chevron-down" class="nav-chevron"></i>
+                            <div class="hover-card">
+                                <div class="hover-card-header">
+                                    <span class="hover-card-title">Calendar</span>
+                                </div>
+                                <div class="hover-card-content">
+                                    <div class="hover-card-item">
+                                        <i data-lucide="calendar-days" class="hover-card-icon"></i>
+                                        <span>Events</span>
+                                    </div>
+                                    <div class="hover-card-item">
+                                        <i data-lucide="clock" class="hover-card-icon"></i>
+                                        <span>Schedule</span>
+                                    </div>
+                                    <div class="hover-card-item">
+                                        <i data-lucide="timeline" class="hover-card-icon"></i>
+                                        <span>Timeline</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="hover-card-content">
-                                <div class="hover-card-item">
-                                    <i data-lucide="calendar-days" class="hover-card-icon"></i>
+                        </button>
+                        <div class="nav-submenu">
+                            <div class="nav-submenu-item">
+                                <div class="nav-submenu-content">
                                     <span>Events</span>
                                 </div>
-                                <div class="hover-card-item">
-                                    <i data-lucide="clock" class="hover-card-icon"></i>
+                            </div>
+                            <div class="nav-submenu-item">
+                                <div class="nav-submenu-content">
                                     <span>Schedule</span>
                                 </div>
-                                <div class="hover-card-item">
-                                    <i data-lucide="timeline" class="hover-card-icon"></i>
+                            </div>
+                            <div class="nav-submenu-item">
+                                <div class="nav-submenu-content">
                                     <span>Timeline</span>
                                 </div>
                             </div>
                         </div>
-                    </button>
-                    <button class="nav-icon-btn security-btn" aria-label="Campaigns">
-                        <i data-lucide="shield" class="nav-icon"></i>
-                        <div class="hover-card">
-                            <div class="hover-card-header">
-                                <span class="hover-card-title">Security</span>
+                    </div>
+                    <div class="nav-section">
+                        <button class="nav-icon-btn security-btn expandable" aria-label="Security">
+                            <i data-lucide="shield" class="nav-icon"></i>
+                            <span class="nav-label">Security</span>
+                            <i data-lucide="chevron-down" class="nav-chevron"></i>
+                            <div class="hover-card">
+                                <div class="hover-card-header">
+                                    <span class="hover-card-title">Security</span>
+                                </div>
+                                <div class="hover-card-content">
+                                    <div class="hover-card-item">
+                                        <i data-lucide="shield-check" class="hover-card-icon"></i>
+                                        <span>Security</span>
+                                    </div>
+                                    <div class="hover-card-item">
+                                        <i data-lucide="file-check" class="hover-card-icon"></i>
+                                        <span>Compliance</span>
+                                    </div>
+                                    <div class="hover-card-item">
+                                        <i data-lucide="key" class="hover-card-icon"></i>
+                                        <span>Permissions</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="hover-card-content">
-                                <div class="hover-card-item">
-                                    <i data-lucide="shield-check" class="hover-card-icon"></i>
+                        </button>
+                        <div class="nav-submenu">
+                            <div class="nav-submenu-item">
+                                <div class="nav-submenu-content">
                                     <span>Security</span>
                                 </div>
-                                <div class="hover-card-item">
-                                    <i data-lucide="file-check" class="hover-card-icon"></i>
+                            </div>
+                            <div class="nav-submenu-item">
+                                <div class="nav-submenu-content">
                                     <span>Compliance</span>
                                 </div>
-                                <div class="hover-card-item">
-                                    <i data-lucide="key" class="hover-card-icon"></i>
+                            </div>
+                            <div class="nav-submenu-item">
+                                <div class="nav-submenu-content">
                                     <span>Permissions</span>
                                 </div>
                             </div>
                         </div>
-                    </button>
-                    <button class="nav-icon-btn charts-btn" aria-label="Charts">
-                        <i data-lucide="pie-chart" class="nav-icon"></i>
-                        <div class="hover-card">
-                            <div class="hover-card-header">
-                                <span class="hover-card-title">Charts</span>
+                    </div>
+                    <div class="nav-section">
+                        <button class="nav-icon-btn charts-btn expandable" aria-label="Charts">
+                            <i data-lucide="pie-chart" class="nav-icon"></i>
+                            <span class="nav-label">Charts</span>
+                            <i data-lucide="chevron-down" class="nav-chevron"></i>
+                            <div class="hover-card">
+                                <div class="hover-card-header">
+                                    <span class="hover-card-title">Charts</span>
+                                </div>
+                                <div class="hover-card-content">
+                                    <div class="hover-card-item">
+                                        <i data-lucide="layout-dashboard" class="hover-card-icon"></i>
+                                        <span>Overview</span>
+                                    </div>
+                                    <div class="hover-card-item">
+                                        <i data-lucide="activity" class="hover-card-icon"></i>
+                                        <span>Trends</span>
+                                    </div>
+                                    <div class="hover-card-item">
+                                        <i data-lucide="lightbulb" class="hover-card-icon"></i>
+                                        <span>Insights</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="hover-card-content">
-                                <div class="hover-card-item">
-                                    <i data-lucide="layout-dashboard" class="hover-card-icon"></i>
+                        </button>
+                        <div class="nav-submenu">
+                            <div class="nav-submenu-item">
+                                <div class="nav-submenu-content">
                                     <span>Overview</span>
                                 </div>
-                                <div class="hover-card-item">
-                                    <i data-lucide="activity" class="hover-card-icon"></i>
+                            </div>
+                            <div class="nav-submenu-item">
+                                <div class="nav-submenu-content">
                                     <span>Trends</span>
                                 </div>
-                                <div class="hover-card-item">
-                                    <i data-lucide="lightbulb" class="hover-card-icon"></i>
+                            </div>
+                            <div class="nav-submenu-item">
+                                <div class="nav-submenu-content">
                                     <span>Insights</span>
                                 </div>
                             </div>
                         </div>
-                    </button>
+                    </div>
                 </nav>
             </div>
             <div class="sidebar-bottom">
                 <button class="nav-icon-btn help-btn" aria-label="Help">
                     <i data-lucide="help-circle" class="nav-icon"></i>
+                    <span class="nav-label">Help</span>
                     <div class="hover-card">
                         <div class="hover-card-header">
                             <span class="hover-card-title">Help</span>
@@ -180,9 +308,11 @@
                 </button>
                 <button class="nav-icon-btn" aria-label="Settings">
                     <i data-lucide="settings" class="nav-icon"></i>
+                    <span class="nav-label">Settings</span>
                 </button>
-                <button class="nav-icon-btn primary" aria-label="New">
+                <button class="nav-icon-btn primary create-btn" aria-label="Create">
                     <i data-lucide="plus" class="nav-icon"></i>
+                    <span class="nav-label">Create...</span>
                 </button>
             </div>
         </aside>
