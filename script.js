@@ -15,11 +15,21 @@ document.addEventListener('DOMContentLoaded', function() {
         menuToggleBtn.addEventListener('click', function(e) {
             e.stopPropagation();
             const wasExpanded = sidebar.classList.contains('expanded');
-            sidebar.classList.toggle('expanded');
             
             if (!wasExpanded) {
+                // Expanding - toggle immediately
+                sidebar.classList.toggle('expanded');
                 // Sidebar is now expanded - add expanding class for delayed animation
                 sidebar.classList.add('expanding');
+                
+                // Force a reflow to ensure the expanding class is applied
+                void sidebar.offsetHeight;
+                
+                // First, ensure all submenus are collapsed initially (even if they have expanded class in HTML)
+                // This ensures they animate in with the delay
+                document.querySelectorAll('.nav-submenu').forEach(submenu => {
+                    submenu.classList.remove('expanded');
+                });
                 
                 // Show submenus for active sections with a delay for animation
                 setTimeout(() => {
@@ -62,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 const submenu = navSection.querySelector('.nav-submenu');
                                 const activeBtn = navSection.querySelector('.nav-icon-btn.expandable');
                                 if (submenu && activeBtn) {
+                                    // Expand the submenu and button with animation delay
                                     submenu.classList.add('expanded');
                                     activeBtn.classList.add('expanded');
                                     activeBtn.classList.add('active');
@@ -70,20 +81,35 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     }
                     
-                    // Remove expanding class after animation starts
+                    // Remove expanding class after animation completes
                     setTimeout(() => {
                         sidebar.classList.remove('expanding');
-                    }, 100);
-                }, 100); // Delay to let sidebar expansion start first
+                    }, 600); // Wait for transition to complete (0.05s delay + 0.3s transition + 0.25s submenu delay)
+                }, 50); // Small delay to ensure expanding class is applied
             } else {
-                // Sidebar is now collapsed - hide all submenus
-                sidebar.classList.remove('expanding');
+                // Sidebar is now collapsing - add collapsing class for delayed animation
+                sidebar.classList.add('collapsing');
+                
+                // Force a reflow to ensure the collapsing class is applied
+                void sidebar.offsetHeight;
+                
+                // Hide all submenus first
                 document.querySelectorAll('.nav-submenu').forEach(submenu => {
                     submenu.classList.remove('expanded');
                 });
                 document.querySelectorAll('.nav-icon-btn.expandable').forEach(btn => {
                     btn.classList.remove('expanded');
                 });
+                
+                // Delay before starting the collapse animation
+                setTimeout(() => {
+                    sidebar.classList.remove('expanded');
+                    
+                    // Remove collapsing class after animation completes
+                    setTimeout(() => {
+                        sidebar.classList.remove('collapsing');
+                    }, 350);
+                }, 50); // Delay before collapse animation starts
             }
             
             // Reinitialize icons after toggle to update chevron rotations
