@@ -160,7 +160,7 @@ body {
     border-radius: var(--rounded-xl);
     cursor: pointer;
     transition: background-color 0.2s ease, width 0.3s ease 0.05s, margin 0.3s ease 0.05s, justify-content 0.3s ease 0.05s;
-    padding: var(--spacing-2);
+    padding: 0;
     gap: var(--spacing-2);
     position: relative;
     background-color: transparent;
@@ -175,11 +175,26 @@ body {
     justify-content: center;
 }
 
+/* Hide nav-label and nav-chevron when sidebar is collapsed (but not hover-card) */
+.sidebar:not(.expanded) .nav-icon-btn .nav-label,
+.sidebar:not(.expanded) .nav-icon-btn .nav-chevron {
+    display: none !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: absolute !important;
+    visibility: hidden !important;
+}
+
+/* Hover card is already position:absolute so it doesn't affect button layout */
+
 .sidebar.expanded .nav-icon-btn {
     width: 100%;
     justify-content: flex-start;
-    padding: var(--spacing-2);
+    padding: 0 var(--spacing-2);
     margin: 0;
+    gap: var(--spacing-2);
 }
 
 .nav-icon-btn:hover:not(.active):not(.primary):not(.menu-toggle-btn) {
@@ -214,11 +229,20 @@ body {
 .nav-icon-btn .nav-icon {
     width: 20px;
     height: 20px;
-    display: block;
+    font-size: 18px;
     transition: transform 0.2s ease;
     color: var(--themes-neutrals-dark);
     flex-shrink: 0;
     will-change: transform;
+    /* Force Font Awesome icon centering */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center;
+}
+
+.nav-icon-btn .nav-icon::before {
+    display: block;
 }
 
 .nav-label {
@@ -242,30 +266,35 @@ body {
 }
 
 .nav-chevron {
-    width: 12px;
+    width: 0;
+    min-width: 0;
     height: 12px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
     color: var(--themes-neutrals-dark);
     opacity: 0;
-    width: 0;
     overflow: hidden;
     transition: opacity 0.2s ease, width 0.2s ease, transform 0.3s ease;
     flex-shrink: 0;
     margin-left: auto;
-    display: none;
     transform: rotate(-90deg);
 }
 
 .sidebar.expanded .nav-icon-btn.expandable:hover .nav-chevron {
     opacity: 1;
     width: 12px;
-    display: block;
+    min-width: 12px;
+    display: flex;
     transform: rotate(-90deg);
 }
 
 .sidebar.expanded .nav-icon-btn.expandable.expanded .nav-chevron {
     opacity: 1;
     width: 12px;
-    display: block;
+    min-width: 12px;
+    display: flex;
     transform: rotate(0deg);
 }
 
@@ -488,6 +517,10 @@ body {
 .hover-card-icon {
     width: 14px;
     height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
     flex-shrink: 0;
     color: var(--themes-text-medium);
     transition: color 0.2s ease;
@@ -548,6 +581,10 @@ body {
 .create-hover-card-icon {
     width: 20px;
     height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
     color: var(--themes-brand-primary);
     flex-shrink: 0;
     transition: transform 0.2s ease;
@@ -643,7 +680,7 @@ body {
 }
 
 .back-btn:hover { background-color: var(--themes-brand-primary-dark); }
-.back-btn .back-icon { width: 20px; height: 20px; color: var(--color-white); transition: transform 0.2s ease; }
+.back-btn .back-icon { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--color-white); transition: transform 0.2s ease; }
 .back-btn:hover .back-icon { transform: scale(1.05); }
 
 .tabs {
@@ -737,7 +774,7 @@ body {
     color: var(--themes-brand-primary-dark);
 }
 
-.tab-icon { width: 14px; height: 14px; flex-shrink: 0; }
+.tab-icon { width: 14px; height: 14px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
 .tab.active .tab-icon { color: var(--themes-brand-primary); }
 .tab:not(.active) .tab-icon { color: var(--themes-neutrals-neutral); }
 
@@ -917,9 +954,9 @@ body {
 }
 
 .select-wrapper.small { min-width: 131px; }
-.select-icon { width: 18px; height: 18px; color: var(--themes-neutrals-neutral); flex-shrink: 0; }
+.select-icon { width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--themes-neutrals-neutral); flex-shrink: 0; }
 .select-input { flex: 1; border: none; background: transparent; font-family: var(--font-family); font-size: var(--text-sm); color: var(--themes-text-medium); outline: none; appearance: none; }
-.select-chevron { width: 16px; height: 16px; color: var(--themes-neutrals-neutral); flex-shrink: 0; }
+.select-chevron { width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--themes-neutrals-neutral); flex-shrink: 0; }
 
 .date-input-wrapper {
     position: relative;
@@ -934,7 +971,7 @@ body {
     width: 256px;
 }
 
-.date-icon { width: 18px; height: 18px; color: var(--themes-text-medium); flex-shrink: 0; }
+.date-icon { width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--themes-text-medium); flex-shrink: 0; }
 .date-input { flex: 1; border: none; background: transparent; font-family: var(--font-family); font-size: var(--text-sm); color: var(--themes-text-medium); outline: none; }
 
 .filter-btn,
@@ -961,6 +998,10 @@ body {
 .btn-icon {
     width: 20px;
     height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
     flex-shrink: 0;
     transition: transform 0.2s ease;
 }
@@ -1018,7 +1059,7 @@ body {
     border-radius: 0 var(--borderradius-tremor-default) var(--borderradius-tremor-default) 0;
 }
 
-.control-icon { width: 20px; height: 20px; color: var(--themes-neutrals-neutral); }
+.control-icon { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--themes-neutrals-neutral); }
 .control-label {
     font-family: var(--font-family);
     font-size: var(--text-sm);
@@ -1037,7 +1078,7 @@ body {
     text-overflow: ellipsis;
     max-width: 100%;
 }
-.control-chevron { width: 20px; height: 20px; color: var(--text-disabled); }
+.control-chevron { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--text-disabled); }
 
 .multi-select-wrapper {
     display: flex;
@@ -1078,7 +1119,7 @@ body {
     cursor: pointer;
     padding: 2px;
 }
-.chip-icon { width: 8px; height: 8px; color: var(--color-white); }
+.chip-icon { width: 8px; height: 8px; display: flex; align-items: center; justify-content: center; font-size: 8px; color: var(--color-white); }
 
 .chart-wrapper {
     background-color: var(--color-white);
@@ -1238,7 +1279,7 @@ body {
     max-width: 375px;
 }
 
-.search-icon { width: 20px; height: 20px; color: #6b7280; flex-shrink: 0; }
+.search-icon { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #6b7280; flex-shrink: 0; }
 .search-input {
     flex: 1;
     border: none;
@@ -1297,7 +1338,7 @@ body {
 }
 
 .th-icons { display: flex; gap: var(--spacing-2); align-items: center; }
-.th-icon { width: 16px; height: 16px; color: var(--themes-neutrals-dark); cursor: pointer; }
+.th-icon { width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--themes-neutrals-dark); cursor: pointer; }
 
 .data-table tbody tr {
     border-bottom: 1px solid var(--themes-text-subtle);
@@ -1330,7 +1371,7 @@ body {
     width: 100%;
 }
 
-.campaign-icon { width: 20px; height: 20px; color: var(--themes-brand-primary); flex-shrink: 0; }
+.campaign-icon { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--themes-brand-primary); flex-shrink: 0; }
 
 .campaign-info {
     display: flex;

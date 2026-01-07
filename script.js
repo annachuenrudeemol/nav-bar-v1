@@ -2,13 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Track current active page
     let currentPageName = 'Campaigns'; // Default to Campaigns
     
-    function initIcons() {
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
-        }
-    }
-    initIcons();
-    setTimeout(initIcons, 100);
+    // Font Awesome icons don't need initialization - they work automatically
 
     // Function to update page content based on active page
     function updatePageContent(pageName) {
@@ -56,8 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Reinitialize icons after updating
-        setTimeout(initIcons, 50);
+        // Font Awesome icons don't need reinitialization
     }
 
     // Sidebar expand/collapse toggle
@@ -165,8 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 50); // Delay before collapse animation starts
             }
             
-            // Reinitialize icons after toggle to update chevron rotations
-            setTimeout(initIcons, 100);
+            // Font Awesome icons don't need reinitialization
         });
     }
 
@@ -268,8 +260,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             // If hasActiveItem is true, do nothing (prevent collapse)
             
-            // Update chevron icon
-            setTimeout(initIcons, 50);
+            // Font Awesome icons don't need reinitialization
         });
     });
 
