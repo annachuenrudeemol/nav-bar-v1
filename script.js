@@ -334,14 +334,15 @@ document.addEventListener('DOMContentLoaded', function() {
         let showTimeout, hideTimeout;
         
         function showCard() {
-            // Only show if sidebar is NOT expanded
-            if (sidebar && sidebar.classList.contains('expanded')) {
+            // Only show if sidebar is NOT expanded (except for create button)
+            const isCreateButton = button.classList.contains('create-btn');
+            if (sidebar && sidebar.classList.contains('expanded') && !isCreateButton) {
                 return;
             }
             clearTimeout(hideTimeout);
             clearTimeout(showTimeout);
             showTimeout = setTimeout(() => {
-                if (!sidebar || !sidebar.classList.contains('expanded')) {
+                if (!sidebar || !sidebar.classList.contains('expanded') || isCreateButton) {
                     button.classList.add('show-hover-card');
                     
                     // Restore active state if this button has an active item

@@ -86,14 +86,11 @@ body {
 }
 
 .sidebar.expanded {
-    overflow: hidden;
-}
-
-.sidebar.expanded {
     width: 190px;
     min-width: 190px;
     max-width: 190px;
     align-items: flex-start;
+    overflow: visible;
 }
 
 .sidebar-top { 
@@ -124,6 +121,8 @@ body {
     width: 100%;
     justify-content: flex-end;
     transition: align-items 0.3s ease;
+    position: relative;
+    z-index: 10002;
 }
 .sidebar.expanded .sidebar-bottom { align-items: flex-start; }
 
@@ -224,6 +223,13 @@ body {
     justify-content: center;
     gap: var(--spacing-2);
     padding: var(--spacing-2) var(--spacing-4);
+}
+
+/* Ensure create button allows hover card to overflow */
+.nav-icon-btn.create-btn {
+    overflow: visible;
+    position: relative;
+    z-index: 10002;
 }
 
 .nav-icon-btn .nav-icon {
@@ -440,6 +446,11 @@ body {
     display: block;
 }
 
+/* Ensure create hover card appears above main content */
+.create-hover-card {
+    z-index: 10001 !important;
+}
+
 /* Create button hover card - positioned above with slide up animation */
 .create-hover-card {
     left: 0;
@@ -448,16 +459,33 @@ body {
     top: auto;
     min-width: 224px;
     transform: translateY(8px);
+    z-index: 10001 !important;
 }
 
 .nav-icon-btn.show-hover-card .create-hover-card {
     transform: translateY(0);
 }
 
-.sidebar.expanded .hover-card {
+/* Hide hover cards when sidebar is expanded, except create button */
+.sidebar.expanded .hover-card:not(.create-hover-card) {
     display: none !important;
     opacity: 0 !important;
     visibility: hidden !important;
+}
+
+/* Exception: Create button hover card should show even when sidebar is expanded */
+.sidebar.expanded .create-btn .create-hover-card,
+.sidebar.expanded .nav-icon-btn.create-btn .create-hover-card {
+    display: block !important;
+}
+
+.sidebar.expanded .create-btn.show-hover-card .create-hover-card,
+.sidebar.expanded .nav-icon-btn.create-btn.show-hover-card .create-hover-card {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    display: block !important;
+    z-index: 10001 !important;
 }
 
 .nav-icon-btn.show-hover-card .hover-card {
@@ -465,6 +493,14 @@ body {
     visibility: visible;
     pointer-events: auto;
     display: block;
+}
+
+/* Ensure create button hover card shows when class is added */
+.nav-icon-btn.create-btn.show-hover-card .create-hover-card {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    display: block !important;
 }
 
 .hover-card-header {
